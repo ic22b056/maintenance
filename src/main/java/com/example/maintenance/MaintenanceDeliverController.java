@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MaintenanceDeliverController
 
 {
-    String Nachricht;
+    String Nachricht = "Hallo";
     @GetMapping("/deliver")
     public String deliver()
     {
@@ -20,5 +20,12 @@ public class MaintenanceDeliverController
     {
         Nachricht = msg;
         return "Nachricht wurde gesetzt.\n";
+    }
+
+    @GetMapping("/resetmsg")
+    public String resetmsg(String msg)
+    {
+        Nachricht = "Hallo";
+        return "Nachricht wurde zurückgesetzt.\n";
     }
 }
