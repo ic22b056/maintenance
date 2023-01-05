@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MaintenanceDeliverController
 
 {
-    String Nachricht = "Hallo";
+    String Nachricht;
     @GetMapping("/deliver")
     public String deliver()
     {
-        return "Everything operates as expected";
+        return Nachricht;
     }
 
     @GetMapping("/setmsg")
@@ -23,9 +23,9 @@ public class MaintenanceDeliverController
     }
 
     @GetMapping("/resetmsg")
-    public String resetmsg(String msg)
+    public String resetmsg()
     {
-        Nachricht = "Hallo";
+        Nachricht = "Everything operates as expected";
         return "Nachricht wurde zurückgesetzt.\n";
     }
 }
